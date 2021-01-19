@@ -328,7 +328,17 @@ contract SupplyChain {
   string  originFarmLongitude
   ) 
   {
+    itemSKU= items[_upc].itemSKU;
+    itemUPC= items[_upc].itemUPC;
+    productID=items[_upc].productID;
+    productNotes=items[_upc].productNotes;
+    productPrice=items[_upc].productPrice;
+    itemState=items[_upc].itemState;
+    distributorID=items[_upc].distributorID;
+    retailerID=items[_upc].retailerID;
+    consumerID=items[_upc].consumerID;
   
+
   
     
   return 
@@ -358,7 +368,15 @@ contract SupplyChain {
   address consumerID
   ) 
   {
-    // Assign values to the 9 parameters
+    itemSKU= items[_upc].itemSKU;
+    itemUPC= items[_upc].itemUPC;
+    productID=items[_upc].productID;
+    productNotes=items[_upc].productNotes;
+    productPrice=items[_upc].productPrice;
+    itemState=items[_upc].itemState;
+    distributorID=items[_upc].distributorID;
+    retailerID=items[_upc].retailerID;
+    consumerID=items[_upc].consumerID;
   
     
   return 
