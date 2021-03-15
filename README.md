@@ -1,19 +1,10 @@
 # Blockchain Developer Nanodegree project 3 (Supply chain )
-This repository containts an Ethereum DApp that demonstrates a Supply Chain flow between a Seller and Buyer. The user story is similar to any commonly used supply chain process. A Seller can add items to the inventory system stored in the blockchain. A Buyer can purchase such items from the inventory system. Additionally a Seller can mark an item as Shipped, and similarly a Buyer can mark an item as Received.
+THis project is about ethereum DAPP for the supply chain flow. it allows users to sell nay goods using the supply chain managmenet. A seller is allowed to add items in the inventory system that would help to store data on the blockchain. A buyer can also buy goods using the sane application.
+
 
 ## Project write-up - UML
 
-### Activity
-![Activity](UML/Activity-Diagram.jpg)
-
-### Sequence
-![Sequence](UML/Sequence-Diagram.jpg)
-
-### State
-![State](UML/State-Diagram.jpg)
-
-### Classes (Data Model)
-![Data-Model](UML/Data-Model-Diagram.jpg)
+All UMML diagrams are in UML project.
 
 ## Project write-up - Libraries
 The `Roles` library was used by different access control contracts for easy add and remove in the supply chain 
