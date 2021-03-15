@@ -35,23 +35,30 @@ https://rinkeby.etherscan.io/address/0x1d4396d3dfdfffb57e2ae580f175e7dfcf08759a
 
    Deploying 'Migrations'
    ----------------------
-   > transaction hash:    0x1a02bb12fc80417e2ad1bd56250775110126d74e48fbb03041ae98b24ff92052
-   > Blocks: 1            Seconds: 21
-   > contract address:    0x302cfAe2e65F6651f3fDB5fAe6f635ca62CA567b
-   > block number:        5625069
-   > block timestamp:     1576515319
-   > account:             0x1D4396D3DfdFFFB57e2Ae580f175E7DFCf08759A
-   > balance:             0.97167573
-   > gas used:            238594
-   > gas price:           10 gwei
+   > transaction hash:    0xc0d47d778f7b558d8dbba76d277d758eafa0a6cb84adb03b3ee5afda95253da1
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x2B572dC64E42EFc91e336Dbcf73e2961A0F96FB5
+   > block number:        1
+   > block timestamp:     1615785670
+   > account:             0xFAb8E767926334b01a232e0767924BD828B21574
+   > balance:             99.99616114
+   > gas used:            191943 (0x2edc7)
+   > gas price:           20 gwei
    > value sent:          0 ETH
-   > total cost:          0.00238594 ETH
+   > total cost:          0.00383886 ETH
 
 
    > Saving migration to chain.
    > Saving artifacts
    -------------------------------------
-   > Total cost:          0.00238594 ETH
+   > Total cost:          0.00383886 ETH
+
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.00383886 ETH
+
 
 
 2_deploy_contracts.js
