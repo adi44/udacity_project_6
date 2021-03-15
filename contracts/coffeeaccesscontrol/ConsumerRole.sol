@@ -5,12 +5,12 @@ import "./Roles.sol";
 
 // Define a contract 'ConsumerRole' to manage this role - add, remove, check
 contract ConsumerRole {
-
+  using Roles for Roles.Role;
   // Define 2 events, one for Adding, and other for Removing
   event ConsumerAdded(address indexed account);
   event ConsumerRemoved(address indexed account);
 
-  Roles.role private consumers;
+  Roles.Role private consumers;
 
   // Define a struct 'consumers' by inheriting from 'Roles' library, struct Role
 
@@ -28,7 +28,7 @@ contract ConsumerRole {
 
   // Define a function 'isConsumer' to check this role
   function isConsumer(address account) public view returns (bool) {
-    require(consumers.has(account));
+    return consumers.has(account);
     
   }
 
@@ -39,7 +39,7 @@ contract ConsumerRole {
   }
 
   // Define a function 'renounceConsumer' to renounce this role
-  function renounceConsumer() public {
+  function renounceConsumer(address account) public {
     _removeConsumer(account);
     
   }
@@ -54,7 +54,7 @@ contract ConsumerRole {
 
   // Define an internal function '_removeConsumer' to remove this role, called by 'removeConsumer'
   function _removeConsumer(address account) internal {
-    consumers.remove(account);
+   consumers.remove(account);
     emit ConsumerRemoved(account);
     
   }
