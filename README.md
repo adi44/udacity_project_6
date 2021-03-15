@@ -20,7 +20,7 @@ Truffle: v5.0.25
 Web3.js: v1.0.0-beta37 
 
 ## Contract address on the Rinkeby test network (Etherscan):
-https://rinkeby.etherscan.io/address/0x1d4396d3dfdfffb57e2ae580f175e7dfcf08759a
+https://rinkeby.etherscan.io/address/0x6eF9D01EC94193caef054Abc0BA583e04f9B9405
 
 ## Transaction ID and contract address
 
@@ -33,25 +33,20 @@ https://rinkeby.etherscan.io/address/0x1d4396d3dfdfffb57e2ae580f175e7dfcf08759a
 1_initial_migration.js
 ======================
 
-   Deploying 'Migrations'
+    Deploying 'Migrations'
    ----------------------
-   > transaction hash:    0xc0d47d778f7b558d8dbba76d277d758eafa0a6cb84adb03b3ee5afda95253da1
-   > Blocks: 0            Seconds: 0
-   > contract address:    0x2B572dC64E42EFc91e336Dbcf73e2961A0F96FB5
-   > block number:        1
-   > block timestamp:     1615785670
-   > account:             0xFAb8E767926334b01a232e0767924BD828B21574
-   > balance:             99.99616114
-   > gas used:            191943 (0x2edc7)
-   > gas price:           20 gwei
+   > block number:        8237040
+   > block timestamp:     1615788757
+   > account:             0xe415bb73BbA1F14435806572A45493a66343c7a3
+   > balance:             7.499552812
+   > gas used:            223594 (0x3696a)
+   > gas price:           2 gwei
    > value sent:          0 ETH
-   > total cost:          0.00383886 ETH
+   > total cost:          0.000447188 ETH
 
-
-   > Saving migration to chain.
-   > Saving artifacts
    -------------------------------------
-   > Total cost:          0.00383886 ETH
+   > Total cost:         0.000447188 ETH
+
 
 
 Summary
@@ -66,89 +61,100 @@ Summary
 
    Deploying 'FarmerRole'
    ----------------------
-   > transaction hash:    0x79b84bba9672baeb0181fa97016e03510903903052a19f4a4a6f0168627ef9ca
-   > Blocks: 1            Seconds: 12
-   > contract address:    0xa041c902B5E6a8a83c9A3cf6D55C65183eb2462f
-   > block number:        5625071
-   > block timestamp:     1576515349
-   > account:             0x1D4396D3DfdFFFB57e2Ae580f175E7DFCf08759A
-   > balance:             0.96674205
-   > gas used:            451020
-   > gas price:           10 gwei
+   > transaction hash:    0x51a190124941bc982153dbe9336f3989d94eaf7b9383f8f240ca61a92ba5cdd6
+   > Blocks: 1            Seconds: 9
+   > contract address:    0xc05C3601fcAD5eeF6F2BA4078912D264bc7801eF
+   > block number:        8237047
+   > block timestamp:     1615788872
+   > account:             0xe415bb73BbA1F14435806572A45493a66343c7a3
+   > balance:             7.48810474
+   > gas used:            313821 (0x4c9dd)
+   > gas price:           20 gwei
    > value sent:          0 ETH
-   > total cost:          0.0045102 ETH
+   > total cost:          0.00627642 ETH
 
 
+   
    Deploying 'DistributorRole'
    ---------------------------
-   > transaction hash:    0xf245353475ad170ce060d54680cb2003f8abf9ecdef52db245791b3ca9f79b41
-   > Blocks: 0            Seconds: 9
-   > contract address:    0xaf1624F9BA8972070eE42311684BE921000355b1
-   > block number:        5625072
-   > block timestamp:     1576515364
-   > account:             0x1D4396D3DfdFFFB57e2Ae580f175E7DFCf08759A
-   > balance:             0.96223113
-   > gas used:            451092
-   > gas price:           10 gwei
+   > transaction hash:    0x2a22b12589e8e5891428c0493170f750357fdd1c36600be0a526ac2f8862e9e8
+   > Blocks: 2            Seconds: 21
+   > contract address:    0x1CbA428435716Db8De179De6dC4F1bCbF51eB1ea
+   > block number:        8237049
+   > block timestamp:     1615788902
+   > account:             0xe415bb73BbA1F14435806572A45493a66343c7a3
+   > balance:             7.48224052
+   > gas used:            293211 (0x4795b)
+   > gas price:           20 gwei
    > value sent:          0 ETH
-   > total cost:          0.00451092 ETH
+   > total cost:          0.00586422 ETH
+
 
 
    Deploying 'RetailerRole'
    ------------------------
-   > transaction hash:    0xec3342fef968e5791df950cf6e1ba8b037d348b11f26e8f5a58f2cb41e6523fe
-   > Blocks: 0            Seconds: 9
-   > contract address:    0xaf4Cb7bb1ED23FA76f18E34261BE81584Bc6c792
-   > block number:        5625073
-   > block timestamp:     1576515379
-   > account:             0x1D4396D3DfdFFFB57e2Ae580f175E7DFCf08759A
-   > balance:             0.95772033
-   > gas used:            451080
-   > gas price:           10 gwei
+   > transaction hash:    0xab9c920719bc5c489ba7b306d8595a8e0346ef2618b92f56b346ef35c219734a
+   > Blocks: 2            Seconds: 21
+   > contract address:    0xF687D8808578295763dD35c7E925e2e167d24aAD
+   > block number:        8237051
+   > block timestamp:     1615788932
+   > account:             0xe415bb73BbA1F14435806572A45493a66343c7a3
+   > balance:             7.47633754
+   > gas used:            295149 (0x480ed)
+   > gas price:           20 gwei
    > value sent:          0 ETH
-   > total cost:          0.0045108 ETH
+   > total cost:          0.00590298 ETH
+
+
 
 
    Deploying 'ConsumerRole'
    ------------------------
-   > transaction hash:    0x0346a0f1176aacbc2f70d695d25d3ff0bc2b2c5b7b29257e530a3c63510a595a
-   > Blocks: 0            Seconds: 7
-   > contract address:    0x59Fb032D660d3830Ec24729D6A57286c8Cef0dd8
-   > block number:        5625074
-   > block timestamp:     1576515394
-   > account:             0x1D4396D3DfdFFFB57e2Ae580f175E7DFCf08759A
-   > balance:             0.95320977
-   > gas used:            451056
-   > gas price:           10 gwei
+   > transaction hash:    0x77ed852890e1fbd1e1442c51601d25404d0b1d55557ce60023a6e9fcc9509952
+   > Blocks: 3            Seconds: 37
+   > contract address:    0xd3CD1d9154A4e5A834804Fd09E981A225C008F2f
+   > block number:        8237054
+   > block timestamp:     1615788977
+   > account:             0xe415bb73BbA1F14435806572A45493a66343c7a3
+   > balance:             7.47047308
+   > gas used:            293223 (0x47967)
+   > gas price:           20 gwei
    > value sent:          0 ETH
-   > total cost:          0.00451056 ETH
+   > total cost:          0.00586446 ETH
+
+
 
 
    Deploying 'SupplyChain'
    -----------------------
-   > transaction hash:    0x33d25ff003526fa072304b4fcb2921d8e160c37b3cd70292d6a842cf6cecbb49
-   > Blocks: 1            Seconds: 10
-   > contract address:    0x66c0486577009EC26A9429B1E38657Ba0fa5c2B0
-   > block number:        5625075
-   > block timestamp:     1576515409
-   > account:             0x1D4396D3DfdFFFB57e2Ae580f175E7DFCf08759A
-   > balance:             0.92025103
-   > gas used:            3295874
-   > gas price:           10 gwei
+   > transaction hash:    0x1f48681651dc92fe3b89d3e9e8d8efc7e49f23d531fe00842527dfcb64519e07
+   > Blocks: 2            Seconds: 21
+   > contract address:    0x6eF9D01EC94193caef054Abc0BA583e04f9B9405
+   > block number:        8237056
+   > block timestamp:     1615789007
+   > account:             0xe415bb73BbA1F14435806572A45493a66343c7a3
+   > balance:             7.4386804
+   > gas used:            1589634 (0x184182)
+   > gas price:           20 gwei
    > value sent:          0 ETH
-   > total cost:          0.03295874 ETH
+   > total cost:          0.03179268 ETH
 
 
-   > Saving migration to chain.
+
+
+  > Saving migration to chain.
    > Saving artifacts
    -------------------------------------
-   > Total cost:          0.05100122 ETH
+   > Total cost:          0.05570076 ETH
 
 
 Summary
 =======
 > Total deployments:   6
-> Final cost:          0.05338716 ETH
+> Final cost:          0.06047264 ETH
+
+
+
 
 ## Getting Started
 
@@ -197,7 +203,7 @@ truffle compile
 
 Your terminal should look something like this:
 
-![truffle test](images/truffle_compile.png)
+
 
 This will create the smart contract artifacts in folder ```build\contracts```.
 
@@ -209,7 +215,7 @@ truffle migrate
 
 Your terminal should look something like this:
 
-![truffle test](images/truffle_migrate.png)
+
 
 Test smart contracts:
 
