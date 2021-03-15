@@ -117,28 +117,28 @@ contract SupplyChain {
 
   // Define a modifier that checks if an item.state of a upc is Sold
   modifier sold(uint _upc) {
-    require(item[_upc].itemState==State.Sold);
+    require(items[_upc].itemState==State.Sold);
 
     _;
   }
   
   // Define a modifier that checks if an item.state of a upc is Shipped
   modifier shipped(uint _upc) {
-    require(item[_upc].itemState==State.Shipped);
+    require(items[_upc].itemState==State.Shipped);
 
     _;
   }
 
   // Define a modifier that checks if an item.state of a upc is Received
   modifier received(uint _upc) {
-    require(item[_upc].itemState==State.Received);
+    require(items[_upc].itemState==State.Received);
 
     _;
   }
 
   // Define a modifier that checks if an item.state of a upc is Purchased
   modifier purchased(uint _upc) {
-    require(item[_upc].itemState==State.Purchased);
+    require(items[_upc].itemState==State.Purchased);
     
     _;
   }
@@ -166,13 +166,16 @@ contract SupplyChain {
     items[_upc]=Item({
       sku:sku,
       upc:upc,
+      ownerID: _originFarmerID,
       originFarmerID:_originFarmerID,
+      originFarmName:_originFarmName,
       originFarmInformation:_originFarmInformation,
       originFarmLatitude:_originFarmLatitude,
+      originFarmLongitude:_originFarmLongitude,
       productID:sku+_upc,
       productNotes:_productNotes,
       productPrice:0,
-      itemState:State.Harvested;
+      itemState:State.Harvested,
       distributorID:address(0),
       retailerID:address(0),
       consumerID:address(0)
@@ -183,7 +186,7 @@ contract SupplyChain {
     // Increment sku
     sku = sku + 1;
     // Emit the appropriate event
-    emit Harvest(_upc);
+    emit Harvested(_upc);
   }
 
   // Define a function 'processtItem' that allows a farmer to mark an item 'Processed'
@@ -230,6 +233,7 @@ contract SupplyChain {
   
   {
     // Update the appropriate fields
+    items[_upc].productPrice = _price;
     items[_upc].itemState=State.ForSale;
     emit ForSale(_upc);
     
@@ -242,7 +246,7 @@ contract SupplyChain {
   // and any excess ether sent is refunded back to the buyer
   function buyItem(uint _upc) public payable 
     // Call modifier to check if upc has passed previous supply chain stage
-    forsale(_upc)
+    forSale(_upc)
     verifyCaller(items[_upc].distributorID)
     // Call modifer to check if buyer has paid enough
     paidEnough(items[_upc].productPrice)
@@ -274,10 +278,10 @@ contract SupplyChain {
     
     {
     // Update the appropriate fields
-    items[_upc].itemState=State.sold;
+    items[_upc].itemState=State.Sold;
     
     // Emit the appropriate event
-    emit sold(_upc);
+    emit Sold(_upc);
     
   }
 
@@ -291,8 +295,8 @@ contract SupplyChain {
     {
     // Update the appropriate fields - ownerID, retailerID, itemState
     items[_upc].ownerID=msg.sender;
-    items.[_upc].retailerID=msg.sender;
-    items[_upc].itemState=State.Recieved;
+    items[_upc].retailerID=msg.sender;
+    items[_upc].itemState=State.Received;
     emit Received(_upc);
     // Emit the appropriate event
     
@@ -320,20 +324,21 @@ contract SupplyChain {
   (
   uint    itemSKU,
   uint    itemUPC,
-  address ownerID,
-  address originFarmerID,
-  string  originFarmName,
-  string  originFarmInformation,
-  string  originFarmLatitude,
-  string  originFarmLongitude
+  uint    productID,
+  string  productNotes,
+  uint    productPrice,
+
+  address distributorID,
+  address retailerID,
+  address consumerID
   ) 
   {
-    itemSKU= items[_upc].itemSKU;
-    itemUPC= items[_upc].itemUPC;
+    itemSKU= items[_upc].sku;
+    itemUPC= items[_upc].upc;
     productID=items[_upc].productID;
     productNotes=items[_upc].productNotes;
     productPrice=items[_upc].productPrice;
-    itemState=items[_upc].itemState;
+
     distributorID=items[_upc].distributorID;
     retailerID=items[_upc].retailerID;
     consumerID=items[_upc].consumerID;
@@ -345,12 +350,13 @@ contract SupplyChain {
   (
   itemSKU,
   itemUPC,
-  ownerID,
-  originFarmerID,
-  originFarmName,
-  originFarmInformation,
-  originFarmLatitude,
-  originFarmLongitude
+  productID,
+  productNotes,
+  productPrice,
+
+  distributorID,
+  retailerID,
+  consumerID
   );
   }
 
@@ -362,18 +368,18 @@ contract SupplyChain {
   uint    productID,
   string  productNotes,
   uint    productPrice,
-  uint    itemState,
+
   address distributorID,
   address retailerID,
   address consumerID
   ) 
   {
-    itemSKU= items[_upc].itemSKU;
-    itemUPC= items[_upc].itemUPC;
+    itemSKU= items[_upc].sku;
+    itemUPC= items[_upc].upc;
     productID=items[_upc].productID;
     productNotes=items[_upc].productNotes;
     productPrice=items[_upc].productPrice;
-    itemState=items[_upc].itemState;
+
     distributorID=items[_upc].distributorID;
     retailerID=items[_upc].retailerID;
     consumerID=items[_upc].consumerID;
@@ -386,7 +392,7 @@ contract SupplyChain {
   productID,
   productNotes,
   productPrice,
-  itemState,
+
   distributorID,
   retailerID,
   consumerID
